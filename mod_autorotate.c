@@ -29,16 +29,17 @@
 #include "apr_time.h"
 #include "apr_strings.h"
 
-#define CORE_PRIVATE
-
 #include "httpd.h"
 #include "http_config.h"
 #include "http_log.h"
 #include "mpm_common.h"
 #include "scoreboard.h"
 
+#include <unistd.h>
+
 /* ---------  Forward declarations   ---------------------------------------*/
 
+// Max length of a rotated log file name
 #define FORMAT_SZ 256
 
 module AP_MODULE_DECLARE_DATA autorotate_module;
